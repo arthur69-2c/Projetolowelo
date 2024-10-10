@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociais</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+        <h1>Relatório dos Lowelos no LoL</h1>
+        <nav>
+            <a href="index.html">Lowelo</a>
+            <a href="#">Highelo</a>
+        </nav>
+    </header>
+    <main class="graficos-section">
+        <section id="graficos-container" class="graficos-container">
+            <div id="grafico-usuarios" class="grafico"></div>
+            <div class="graficos-container__texto">
+                <span>Ferro, Bronze, Prata, Ouro e Platina (em ordem crescente)</span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Arthur N. Beatriz S.</p>
+    </footer>
+    <script>
+        // Dados fictícios para o gráfico
+        const redesSociais = ['Ferro', 'Bronze', 'Prata', 'Ouro', 'Platina'];
+        const usuarios = [9.92, 24.8, 24.8, 24.8, 19.84]; //em milhões
+
+        const trace = {
+            x: redesSociais,
+            y: usuarios,
+            type: 'bar',
+            marker: {
+                color: '#0234bdS',
+            },
+        };
+
+        const layout = {
+            title: 'Número de Jogadores em Lowelos do LoL (em milhões)',
+            xaxis: {
+                title: 'Lowelos',
+            },
+            yaxis: {
+                title: 'Número de Jogadores do Lowelos do LoL (milhões)',
+            },
+            paper_bgcolor: 'rgba(0, 0, 0, 0)',
+            plot_bgcolor: 'rgba(0, 0, 0, 0)',
+            font: {
+                color: '#ac95ff',
+            },
+        };
+
+        Plotly.newPlot('grafico-usuarios', [trace], layout);
+    </script>
+</body>
+</html>
